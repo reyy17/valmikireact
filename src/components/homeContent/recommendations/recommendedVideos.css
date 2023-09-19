@@ -1,0 +1,86 @@
+/* recommendedVideos.css */
+
+/* Styling for the container that holds VideoCard components */
+.recommendedVideos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Styling for each VideoCard */
+.videoCard {
+  width: calc(33.33% - 20px); /* Adjust the width as needed */
+  background-color: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Styling for the course image */
+.videoCard .courseImg {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Styling for the course title */
+.videoCard h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Styling for the instructor */
+.videoCard p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Styling for the rating section */
+.videoCard .ratingDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Styling for the rating value */
+.videoCard .rating {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Styling for the star icons */
+.videoCard .stars {
+  display: flex;
+  align-items: center;
+  color: #f0c14b; /* Star icon color */
+}
+
+/* Styling for the number of students */
+.videoCard .noOfStudents {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+/* Styling for the price */
+.videoCard .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0073e6; /* Price color */
+  margin-top: 10px;
+}
+
+/* Styling for the Bestseller badge */
+.videoCard .bestsellerBadge {
+  background-color: #ffdb58; /* Badge background color */
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

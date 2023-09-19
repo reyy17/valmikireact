@@ -1,16 +1,6 @@
+/* Default styles for all screen sizes */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +14,16 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Media query for screens with a maximum width of 768px (e.g., tablets and smaller screens) */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: 16px; /* Adjust the font size for smaller screens */
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Media query for screens with a minimum width of 769px (e.g., larger screens) */
+@media (min-width: 769px) {
+  .App-header {
+    font-size: calc(10px + 2vmin); /* Reset the font size to its original value */
   }
 }
