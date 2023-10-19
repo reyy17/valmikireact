@@ -88,8 +88,6 @@ function TopCategories() {
             }
             title={"Music"}
           />
-
-
         </Slider>
       </div>
     </div>

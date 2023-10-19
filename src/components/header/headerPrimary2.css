@@ -1,0 +1,101 @@
+.headerPrimary {
+    color: #3c3b37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 0px 10px;
+    font-size: 14px;
+    letter-spacing: normal;
+    box-shadow: 0px 1px 6px rgb(199, 198, 198);
+  }
+  
+  h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 25px;
+  }
+  
+  .headerPrimary .part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .headerPrimary .part * {
+    margin: 0px 8px;
+  }
+  
+  .headerPrimary .mid {
+    width: 55%;
+    position: relative;
+  }
+  
+  .headerPrimary .right .businessDiv,
+  .headerPrimary .right .teachDiv {
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .headerPrimary .searchBar {
+    border-radius: 50px;
+    border: 1px #64635e solid;
+    font-size: 0.9rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    height: 45px;
+    width: 100%;
+    padding-left: 7%;
+  }
+  
+  .headerPrimary .searchIcon {
+    height: 20px;
+    width: 50px;
+    position: absolute;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .headerPrimary .button {
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 1px solid;
+    height: 36px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  
+  .headerPrimary .icon {
+    color: #73726c;
+    cursor: pointer;
+  }
+  
+  .headerPrimary .icon:hover {
+    color: #0f7c90;
+  }
+  
+  .headerPrimary span {
+    cursor: pointer;
+  }
+  
+  .headerPrimary span:hover {
+    color: #0f7c90;
+  }
+  
+  
+ 
+  
+  
+  
+  
+  

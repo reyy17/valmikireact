@@ -5,9 +5,9 @@ function FillerDiv() {
   return (
     <div className="fillerDiv">
       <div className="aboutFiller">
-        <h2>Get personal learning recommendations</h2>
-        <p>Answer a few questions for your top picks</p>
-        <div className="getstartedButton">GET to know </div>
+        <h2>About us</h2>
+        <p>Valmiki is a comprehensive, free platform offering a wide range of college 
+          courses, along with an integrated coding platform for hands-on practice. Explore limitless learning opportunities without any cost!</p>
       </div>
     </div>
   );

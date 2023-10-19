@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  
   }
   
   .recommendations {
@@ -17,9 +18,12 @@
   }
   
   .recommendations h2 {
-    font-size: 26px;
+    font-size: 35px;
     color: #3c3b37;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
   }
   
   .recommendations p {

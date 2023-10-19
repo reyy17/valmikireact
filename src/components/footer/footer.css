@@ -29,6 +29,8 @@
     cursor: pointer;
     color: #0f7c90;
     font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;  
   }
   
   .footer .upperDiv p:hover {
@@ -48,10 +50,14 @@ h3{
   font-family: 'Nunito Sans';
   font-style: italic;
   font-size: 25px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
   
   .footer .lowerDiv p {
     color: #73726c;
     font-size: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;  
   }
   

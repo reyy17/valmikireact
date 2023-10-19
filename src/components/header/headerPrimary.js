@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Modal from "react-modal";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
@@ -13,12 +14,8 @@ function HeaderPrimary() {
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] = useState(false); 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    role: "",
-  });
+  const [formData, setFormData] = useState({});
+
 
   const navigateToForgotPassword = () => {
     setForgotPasswordModalOpen(true);
@@ -56,26 +53,32 @@ function HeaderPrimary() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+        username: formData.username,
+        userid: formData.userid,
+        mobile: formData.mobile,
+        gender: formData.gender,
+        profession: formData.profession,
+        address: formData.address,
+        resetToken: formData.resetToken,
+      }),
     })
-      .then((response) => {
-        if (response.status === 200) {
-          setFormData({
-            name: "",
-            email: "",
-            password: "",
-            role: "",
-          });
-          console.log("Signup successful");
-          closeSignupModal();
-        } else {
-          console.error("Signup failed");
-        }
-      })
+    .then((response) => {
+      if (response.status === 200) {
+        // Handle success
+        closeSignupModal();
+        navigate('/Secondpage'); // Navigate to SecondPage
+      } else {
+        // Handle failure
+      }
+    })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
+  
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -89,18 +92,21 @@ function HeaderPrimary() {
         password: formData.password,
       }),
     })
-      .then((response) => {
-        if (response.status === 200) {
-          console.log("Login successful");
-          closeLoginModal();
-        } else {
-          console.error("Login failed");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    .then((response) => {
+      if (response.status === 200) {
+        // Handle success
+        console.log("Login successful");
+        closeLoginModal();
+        navigate('/Secondpage'); // Navigate to SecondPage
+      } else {
+        // Handle failure
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   };
+  
 
   const handleResetPassword = (e) => {
     e.preventDefault();
@@ -109,21 +115,20 @@ function HeaderPrimary() {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `email=${formData.email}`,
+      body: `email=${formData.email}&resetToken=${formData.resetToken}`,
     })
       .then((response) => {
         if (response.status === 200) {
-          console.log("Password reset request sent successfully");
-          closeForgotPasswordModal();
-          
+          // Handle success
         } else {
-          console.error("Password reset request failed");
+          // Handle failure
         }
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
+  
 
   return (
     <div className="headerPrimary">
@@ -137,8 +142,8 @@ function HeaderPrimary() {
         <input className="searchBar" placeholder="Search for anything"></input>
       </div>
       <div className="right part">
-        <div className="businessDiv">Coding Platform </div> 
-        <div className="teachDiv">Teach On Valmiki</div>
+        <div className="businessDiv" style={{ cursor: "pointer" }}>Coding Platform </div> 
+        <div className="teachDiv" style={{ cursor: "pointer" }}>Teach On Valmiki</div>
         <div className="cartDiv">
           <ShoppingCartOutlinedIcon className="icon" />
         </div>
@@ -149,19 +154,22 @@ function HeaderPrimary() {
         <Modal
           isOpen={isLoginModalOpen}
           onRequestClose={closeLoginModal}
-          contentLabel="Login Modal"
-        >
+          contentLabel="Login Modal">
+
           <div className="login-popup">
-            <h2>Login</h2>
+          <button className="close-button" onClick={closeLoginModal}> X </button> 
+
+          <img
+           src="../about1.jpeg"
+           alt="instructorImg"
+           className="instructorImg"
+             style={{ width: "130%", height: "100%", maxWidth: "100%" }}
+      ></img>
+          
+          <div className="contentDiv">
+            <h1>Welcome Back</h1>
             <form onSubmit={handleLogin}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
+              
               <input
                 type="email"
                 name="email"
@@ -178,14 +186,18 @@ function HeaderPrimary() {
                 onChange={handleInputChange}
                 required
               />
-              <button className="forgot-password button" onClick={navigateToForgotPassword}>
-  Forgot Password
-</button>
 
+              <span
+               className="forgot-password-link"
+               onClick={navigateToForgotPassword}
+               style={{ cursor: "pointer" }}
+>
+                 Forgot Password?</span>
               <button type="submit">Login</button>
-              <button onClick={closeLoginModal}>Close</button>
+              
             </form>
-          </div>
+            </div>
+            </div>
         </Modal>
 
         <div className="signup button" onClick={openSignupModal}>
@@ -198,21 +210,70 @@ function HeaderPrimary() {
           contentLabel="Sign Up Modal"
         >
           <div className="signup-popup">
-            <h2>Sign Up</h2>
+          <button className="close-button" onClick={closeSignupModal}> X </button> 
+          <img
+          src="../about1.jpeg" 
+           alt="instructorImg"
+           className="instructorImg"
+           style={{ width: "130%", height: "100%", maxWidth: "100%" }}
+      ></img>
+
+           <div className="contentDiv">
+            <h1>Create Account</h1>
             <form onSubmit={handleSignup}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
                 value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="text"
+                name="userid"
+                placeholder="UserId"
+                value={formData.userid}
+                onChange={handleInputChange}
+                required
+              />
+              <input
+                type="text"
+                name="mobile"
+                placeholder="Mobile"
+                value={formData.modile}
+                onChange={handleInputChange}
+                required
+              />
+               <input
+                type="text"
+                name="gender"
+                placeholder="Gender"
+                value={formData.gender}
+                onChange={handleInputChange}
+                required
+              />
+               <input
+                type="text"
+                name="profession"
+                placeholder="Profession"
+                value={formData.profession}
+                onChange={handleInputChange}
+                required
+              />
+                <input
+                type="text"
+                name="address"
+                placeholder="Address"
+                value={formData.address}
                 onChange={handleInputChange}
                 required
               />
@@ -224,17 +285,17 @@ function HeaderPrimary() {
                 onChange={handleInputChange}
                 required
               />
-              <input
+               <input
                 type="text"
-                name="role"
-                placeholder="Role"
-                value={formData.role}
+                name="resetToken"
+                placeholder="Reset Token"
+                value={formData.resetToken}
                 onChange={handleInputChange}
                 required
               />
               <button type="submit">Sign Up</button>
-              <button onClick={closeSignupModal}>Close</button>
             </form>
+          </div>
           </div>
         </Modal>
 
@@ -244,7 +305,19 @@ function HeaderPrimary() {
           contentLabel="Forgot Password Modal"
         >
           <div className="forgot-password-popup">
-            <h2>Forgot Password</h2>
+          <button className="close-button" onClick={closeForgotPasswordModal}> X </button> 
+          <img
+          src="../forgot_pass.jpeg" 
+           alt="forgotImg"
+           className="forgotImg"
+           style={{ width: "130%", height: "100%", maxWidth: "100%" }}>
+           </img>
+
+            <div className="contentDiv">
+            <h1>Forgot Password ?</h1>
+            <span
+               className="reset">
+                Enter the email address associated <br /> with your account</span>
             <form onSubmit={handleResetPassword}>
               <input
                 type="email"
@@ -254,9 +327,10 @@ function HeaderPrimary() {
                 onChange={handleInputChange}
                 required
               />
-              <button type="submit">Reset Password</button>
-              <button onClick={closeForgotPasswordModal}>Close</button>
+              
+              <button type="submit">Submit</button>
             </form>
+          </div>
           </div>
         </Modal>
       </div>

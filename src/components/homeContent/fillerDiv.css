@@ -4,8 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(https://s.udemycdn.com/browse_components/shared-assets/purple-intersect.svg)
-      repeat-x #6e1a52;
+    background-color:#6e1a52;
     height: 200px;
     background-size: auto 120%;
     padding: 30px 0px;
@@ -24,11 +23,15 @@
   .fillerDiv h2 {
     font-size: 34px;
     margin-bottom: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   
   .fillerDiv p {
     font-size: 19px;
     margin-bottom: 18px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   
   .fillerDiv .getstartedButton {
@@ -38,5 +41,7 @@
     font-weight: 600;
     padding: 13px 13px;
     cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   

@@ -9,7 +9,7 @@ function RecommendedVideos() {
         courseTitle={"Web Development - From Beginner to Advanced"}
         imgSrc={"https://www.onlinecoursereport.com/wp-content/uploads/2020/07/shutterstock_394793860-1024x784.jpg"}
         instructor={"Kyle Pew, Office Newb LLC"}
-        rating={4.6}
+        rating={4.8}
         noOfStudents={"(166,042)"}
        
       />
@@ -17,7 +17,7 @@ function RecommendedVideos() {
         courseTitle={"The Complete React js Course - From Beginner to Advanced"}
         imgSrc={"https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/S5atf80QTb2tZOScHsiW"}
         instructor={"Rob Percival, Daragh Walsh, Codestars by Rob Percival"}
-        rating={4.4}
+        rating={4.8}
         noOfStudents={"(116,637)"}
         
       />
@@ -27,7 +27,7 @@ function RecommendedVideos() {
         }
         imgSrc={"https://www.webdschool.com/img/ios-app-development.jpg"}
         instructor={"Dr. Anglea Yu"}
-        rating={4.8}
+        rating={4.7}
         noOfStudents={"(49,923)"}
        
       />
@@ -37,7 +37,7 @@ function RecommendedVideos() {
         }
         imgSrc={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFu4a5lkNjnHIfXudw2xXb8dU_CpDmY95oww&usqp=CAU"}
         instructor={"Neil Anderson"}
-        rating={4.8}
+        rating={4.6}
         noOfStudents={"(25,489)"}
         
       />
@@ -48,7 +48,7 @@ function RecommendedVideos() {
         }
         imgSrc={"https://sumanit.com/wp-content/uploads/2022/05/Amazon-AWS-1.png"}
         instructor={"Nitin Rao"}
-        rating={4.8}
+        rating={4.5}
         noOfStudents={"(25,489)"}
         
       />

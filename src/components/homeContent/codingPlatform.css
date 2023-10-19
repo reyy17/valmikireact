@@ -33,11 +33,15 @@
   .codingPlatform .contentDiv .heading {
     font-size: 34px;
     margin-bottom: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;  
   }
   
   .codingPlatform  .contentDiv .about {
     font-size: 19px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;  
   }
   
   .codingPlatform .contentDiv .button {
@@ -52,6 +56,9 @@
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;  
   }
   
   .codingPlatform  .contentDiv .button:hover {
@@ -61,5 +68,6 @@
   .codingPlatform  .Img {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
     height: calc(100% - 73px);
+   
   }
   

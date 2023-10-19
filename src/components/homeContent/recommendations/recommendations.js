@@ -6,7 +6,7 @@ function Recommendations() {
   return (
     <div className="recommendationsDiv">
       <div className="recommendations">
-        <h2>Students are viewing</h2>
+        <h2>Our top picks for you</h2>
         <RecommendedVideos />
       </div>
     </div>

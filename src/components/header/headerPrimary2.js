@@ -1,20 +1,18 @@
-import React, { useState } from "react";
-import "../../components/header/headerPrimary.css";
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import React from "react";
+import { Link } from "react-router-dom";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import "../../components/header/headerPrimary2.css";
 
 
-function HeaderPrimary2() {
+
+function HeaderPrimary() {
 
   return (
     <div className="headerPrimary">
       <div className="left part">
-        <div className="udemyLogo">
-          <img src="..//logo.jpg" className="logo" alt="logo"></img>
-        </div>
-        <div className="categoriesDiv">
-          <span className="categories">Categories</span>
-        </div>
+       <div><h3>Valmiki</h3></div>
       </div>
       <div className="mid part">
         <div className="searchIcon">
@@ -23,15 +21,20 @@ function HeaderPrimary2() {
         <input className="searchBar" placeholder="Search for anything"></input>
       </div>
       <div className="right part">
-        <div className="businessDiv">Coding Platform</div>
-        <div className="teachDiv">Teach on Valmiki </div>
-        <div className="sign up"> My courses</div>
+      <Link to="/daily-assignments" className="businessDiv" style={{ cursor: "pointer" }}>
+          Daily Assignments
+        </Link>
+
+        <div className="businessDiv" style={{ cursor: "pointer" }}>Coding Platform </div> 
         <div className="cartDiv">
-          < PersonOutlineIcon className="icon" />
+          <ShoppingCartOutlinedIcon className="icon" style={{ fontSize: 30 }} />
+        </div>
+        <div className="profileIcon">
+        <AccountCircleIcon className="icon" style={{ fontSize: 35 }} />
         </div>
       </div>
     </div>
   );
 }
 
-export default HeaderPrimary2;
+export default HeaderPrimary;

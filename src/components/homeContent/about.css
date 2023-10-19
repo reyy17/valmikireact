@@ -1,64 +1,62 @@
-.aboutDiv {
-  height: 400px;
-  position: relative;
+.aboutWrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row; 
   margin: 30px 0px;
-}
-
-.aboutDiv .backgroundColorDiv {
+  align-items: center;
   background-color: #fbfbf8;
-  position: absolute;
-  height: 100%; /* Set the background's height to match the image */
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  left: 0;
 }
 
-.aboutDiv .contentDiv {
-  width: 400px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  box-sizing: border-box;
+.aboutWrapper .imgbox {
+  width: 40%;
+  height: 500px;
+  margin-right: 80px;
+  
+}
+
+.aboutWrapper .contentDiv {
   text-align: left;
   color: #3c3b37;
-  line-height: 1.4;
-  margin-left: 100px;
+  padding: 25px;
+  
 }
 
-.aboutDiv .contentDiv .heading {
-  font-size: 34px;
-  margin-bottom: 10px;
+.aboutWrapper .contentDiv .heading {
+  font-size: 40px;
+  margin-bottom: 15px; 
+  margin-top: 0;
 }
 
-.aboutDiv .contentDiv .about {
+.aboutWrapper .contentDiv .liner {
+  font-size: 30px;
+  margin-bottom: 50px; 
+  margin-top: 10px; 
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.aboutWrapper .contentDiv .about {
   font-size: 19px;
   margin-bottom: 15px;
+  margin-top: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
-.aboutDiv .contentDiv .button {
-  width: 180px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.aboutWrapper .contentDiv button {
+  margin-top: 20px;
+  padding: 10px 20px;
   background-color: #0f7c90;
   color: white;
-  height: 50px;
-  border-radius: 4px;
-  font-weight: 600;
+  border: none;font-size: 20px;
+  border-radius: 5px;
   cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-.aboutDiv .contentDiv .button:hover {
-  background-color: #094c59;
-}
-
-.aboutDiv .contentDiv .instructorImg {
-  max-height: 200px; /* Set a specific maximum height for the image */
-  max-width: 100%; /* Ensure the image doesn't overflow horizontally */
+.aboutWrapper .contentDiv button:hover {
+  background-color: #054f5c;
+  
 }

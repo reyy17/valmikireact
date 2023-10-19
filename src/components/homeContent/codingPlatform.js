@@ -8,9 +8,9 @@ function CodingPlatform() {
       <div className="contentDiv">
         <h2 className="heading">Coding Platform</h2>
         <p className="about">
-          Get unlimited access to 4,000+ of Valmiki's top courses for your team.
+        Dive into the coding platform and practice your newfound skills.
         </p>
-        <div className="startTeching button">Get on the Coding Platform</div>
+        <div className="startTeching button">START CODING</div>
       </div>
       <img
         src="https://s.udemycdn.com/home/non-student-cta/udlite-lohp-promo-ufb.jpg"
