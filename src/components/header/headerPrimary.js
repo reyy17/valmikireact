@@ -5,6 +5,7 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import { useNavigate } from 'react-router-dom';
 import "../../components/header/headerPrimary.css";
+import Secondpage from "../Secondpage";
 
 const baseURL = "http://localhost:14440/ashram/api/auth/v1";
 
@@ -14,7 +15,15 @@ function HeaderPrimary() {
   const [isSignupModalOpen, setSignupModalOpen] = useState(false);
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const [isForgotPasswordModalOpen, setForgotPasswordModalOpen] = useState(false); 
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    username: "",
+    mobile: "",
+    gender: "",
+    profession: "",
+    address: ""
+  });
 
 
   const navigateToForgotPassword = () => {
@@ -48,7 +57,7 @@ function HeaderPrimary() {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    fetch(`${baseURL}/signup`, {
+    fetch(`${baseURL}/registeruser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,23 +66,21 @@ function HeaderPrimary() {
         email: formData.email,
         password: formData.password,
         username: formData.username,
-        userid: formData.userid,
         mobile: formData.mobile,
         gender: formData.gender,
         profession: formData.profession,
-        address: formData.address,
-        resetToken: formData.resetToken,
+        address: formData.address
       }),
     })
-    .then((response) => {
-      if (response.status === 200) {
-        // Handle success
-        closeSignupModal();
-        navigate('/Secondpage'); // Navigate to SecondPage
-      } else {
-        // Handle failure
-      }
-    })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log("Signup successful", response.data);
+          closeSignupModal(); 
+          navigate.push("/secondpage");
+        } else {
+          console.log("Signup error");
+        }
+      })
       .catch((error) => {
         console.error("Error:", error);
       });
@@ -82,7 +89,7 @@ function HeaderPrimary() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch(`${baseURL}/signin`, {
+    fetch(`${baseURL}/loginuser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -92,19 +99,18 @@ function HeaderPrimary() {
         password: formData.password,
       }),
     })
-    .then((response) => {
-      if (response.status === 200) {
-        // Handle success
-        console.log("Login successful");
-        closeLoginModal();
-        navigate('/Secondpage'); // Navigate to SecondPage
-      } else {
-        // Handle failure
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+      .then((response) => {
+        if (response.status === 200) {
+          console.log("Login success", response);
+          closeLoginModal(); // Close the login modal
+          navigate.push("/secondpage");
+        } else {
+          console.log("Login error");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
   
 
@@ -113,21 +119,26 @@ function HeaderPrimary() {
     fetch(`${baseURL}/forgot`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json", // Change content type
       },
-      body: `email=${formData.email}&resetToken=${formData.resetToken}`,
+      body: JSON.stringify({
+        email: formData.email,
+        resetToken: formData.resetToken, // Make sure you set the resetToken
+      }),
     })
       .then((response) => {
+        console.log('Response:', response);
         if (response.status === 200) {
-          // Handle success
+          console.log("Email sent");
         } else {
-          // Handle failure
+          console.log("Error");
         }
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
+  
   
 
   return (
@@ -237,14 +248,14 @@ function HeaderPrimary() {
                 onChange={handleInputChange}
                 required
               />
-              <input
+              {/* <input
                 type="text"
                 name="userid"
                 placeholder="UserId"
                 value={formData.userid}
                 onChange={handleInputChange}
                 required
-              />
+              /> */}
               <input
                 type="text"
                 name="mobile"
@@ -285,14 +296,14 @@ function HeaderPrimary() {
                 onChange={handleInputChange}
                 required
               />
-               <input
+               {/* <input
                 type="text"
                 name="resetToken"
                 placeholder="Reset Token"
                 value={formData.resetToken}
                 onChange={handleInputChange}
                 required
-              />
+              /> */}
               <button type="submit">Sign Up</button>
             </form>
           </div>

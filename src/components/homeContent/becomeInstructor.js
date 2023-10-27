@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import "../../components/homeContent/becomeInstructor.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Import Axios
+
+const baseURL = "http://localhost:14440/ashram/api/auth/v1";
 
 function BecomeInstructor() {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -51,18 +56,26 @@ function BecomeInstructor() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle form submission logic here
-    console.log(formData);
+     try {
+      const response = await axios.post(`${baseURL}/registerprofessor`, formData);
+      console.log("Signup successful", response.data);
+    } catch (error) {
+      console.error("Signup error", error);
+    }
     closeModal();
   };
 
-  const handleLogin = (e) => {
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // handle login logic here
-    console.log(loginFormData);
-    closeLoginPopup();
+    try {
+      const response = await axios.post(`${baseURL}/loginprofessor`, formData);
+      console.log("Login successful", response.data);
+    } catch (error) {
+      console.error("Login error", error);
+    }
   };
 
   return (
@@ -165,14 +178,14 @@ function BecomeInstructor() {
                       onChange={handleChange}
                       required
                     />
-                    <input
+                    {/* <input
                       type="text"
                       name="status"
                       placeholder="Status"
                       value={formData.status}
                       onChange={handleChange}
-                      required
-                    />
+                      
+                    /> */}
                   </div>
                 </div>
                 <button type="submit">Sign Up</button> <br />
