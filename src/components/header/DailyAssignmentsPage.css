@@ -1,0 +1,57 @@
+
+.assignment-container {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px;
+  }
+  
+  .assignment-card {
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #95ced8;
+    border-radius: 5px;
+  }
+  
+  .assignment-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .assignment-info {
+    flex: 1;
+  }
+  
+  h2 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 5px 0;
+    overflow-wrap: break-word; 
+  }
+  
+  .attempt-button {
+    flex: 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #0f7c90;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #054f5c;
+  }
+  
